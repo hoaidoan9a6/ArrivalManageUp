@@ -1,10 +1,10 @@
 package com.example.arrivalmanage;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -14,14 +14,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         View decor = this.getWindow().getDecorView();
-        decor.setSystemUiVisibility(View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_FULLSCREEN
-                | View.SYSTEM_UI_FLAG_LOW_PROFILE);
-
+        UIHelper.hideNavigationBar(decor);
         //MENU
         findViewById(R.id.btnArrival).setOnClickListener(this);
         findViewById(R.id.btnMaterial).setOnClickListener(this);
@@ -34,6 +27,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         int id = view.getId();
         if (id == R.id.btnArrival) {
+            Intent intent = new Intent(this, ArrivalActivity.class);
+            startActivity(intent);
         } else if (id == R.id.btnMaterial) {
         } else if (id == R.id.btnPerformance) {
         } else if (id == R.id.btnSetting) {
