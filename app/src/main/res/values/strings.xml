@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">ArrivalManage</string>
+
+    <string name="menu_1">入荷検収</string>
+    <string name="menu_2">原料チェック</string>
+    <string name="menu_3">事績送信</string>
+    <string name="menu_4">環境設定</string>
+
+
+    <string name="txtBTRequired">BTアドレスをスキャンしてください</string>
+    <string name="BTAddress">BTアドレス</string>
+    <string name="URL">URL</string>
+    <string name="Username">ユーザー</string>
+    <string name="Password">パスワード</string>
+
+
+    <string name="BTAddress_Key">BLUETOOTH_ADDRESS</string>
+    <string name="URL_key">URL</string>
+    <string name="Username_key">USERNAME</string>
+    <string name="Password_key">PASSWORD</string>
+
+
+    <string name="BTAddress_value">192.145.1.1</string>
+    <string name="URL_value">ftp:/send.com</string>
+    <string name="Username_value">username</string>
+    <string name="Password_value">pass</string>
+
+
+    <string name="btnSettingBack">戻る</string>
+    <string name="btnSettingSave">設定</string>
+
+</resources>
