@@ -76,10 +76,11 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
                 saveSetting();
                 Snackbar.make(view, "環境設定を保存しました。", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-
+                //DELAY
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
+                        //BACK MENU
                         startActivity(intent);
                     }
                 }, 1000);
