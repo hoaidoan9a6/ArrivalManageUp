@@ -32,23 +32,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        switch(view.getId()) {
-            case R.id.btnArrival:
-
-                break;
-            case R.id.btnMaterial:
-
-                break;
-            case R.id.btnPerformance:
-
-                break;
-            case R.id.btnSetting:
-                Intent intent = new Intent(this, SettingActivity.class);
-                startActivity(intent);
-                break;
-            default:
-
-                break;
+        int id = view.getId();
+        if (id == R.id.btnArrival) {
+        } else if (id == R.id.btnMaterial) {
+        } else if (id == R.id.btnPerformance) {
+        } else if (id == R.id.btnSetting) {
+            Intent intent = new Intent(this, SettingActivity.class);
+            startActivity(intent);
         }
     }
 }

@@ -1,7 +1,6 @@
 package com.example.arrivalmanage;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -65,29 +64,22 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
 
 
 
+
     @Override
     public void onClick(View view) {
         Intent intent = new Intent(this, MainActivity.class);
-        switch(view.getId()) {
-            case R.id.btnSettingBack:
+        int id = view.getId();
+        if (id == R.id.btnSettingBack) {
+            startActivity(intent);
+        } else if (id == R.id.btnSettingSave) {
+            saveSetting();
+            Snackbar.make(view, "環境設定を保存しました。", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show();
+            //DELAY
+            new Handler().postDelayed(() -> {
+                //BACK MENU
                 startActivity(intent);
-                break;
-            case R.id.btnSettingSave:
-                saveSetting();
-                Snackbar.make(view, "環境設定を保存しました。", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-                //DELAY
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        //BACK MENU
-                        startActivity(intent);
-                    }
-                }, 1000);
-                break;
-            default:
-
-                break;
+            }, 1000);
         }
     }
 
@@ -106,7 +98,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
         editor.putString(PREFERENCES_USERNAME, String.valueOf(txtUsername.getText()));
         editor.putString(PREFERENCES_PASSWORD, String.valueOf(txtPassword.getText()));
 
-        editor.commit();
+//        editor.commit();
         editor.apply();
     }
 
