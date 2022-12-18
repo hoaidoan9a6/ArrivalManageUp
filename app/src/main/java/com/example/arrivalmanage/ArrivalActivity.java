@@ -45,6 +45,9 @@ public class ArrivalActivity extends AppCompatActivity implements View.OnClickLi
         if (data == null) {
             return;
         }
+        if (data.getExtras() == null) {
+            return;
+        }
         if (requestCode == CAMERA_REQUEST_CODE) {
             Bitmap imgBitmap = (Bitmap) data.getExtras().get("data");
             igmBtn.setImageBitmap(imgBitmap);
