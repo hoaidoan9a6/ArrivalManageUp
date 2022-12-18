@@ -40,12 +40,16 @@ public class ArrivalActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        View decor = this.getWindow().getDecorView();
+        UIHelper.hideNavigationBar(decor);
+        if (data == null) {
+            return;
+        }
         if (requestCode == CAMERA_REQUEST_CODE) {
             Bitmap imgBitmap = (Bitmap) data.getExtras().get("data");
             igmBtn.setImageBitmap(imgBitmap);
         }
-        View decor = this.getWindow().getDecorView();
-        UIHelper.hideNavigationBar(decor);
+
     }
 }
 
