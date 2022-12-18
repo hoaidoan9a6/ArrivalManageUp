@@ -42,9 +42,11 @@ public class ArrivalActivity extends AppCompatActivity implements View.OnClickLi
         super.onActivityResult(requestCode, resultCode, data);
         View decor = this.getWindow().getDecorView();
         UIHelper.hideNavigationBar(decor);
+        //NAVIバーの戻る
         if (data == null) {
             return;
         }
+        //取った写真のキャンセル
         if (data.getExtras() == null) {
             return;
         }
