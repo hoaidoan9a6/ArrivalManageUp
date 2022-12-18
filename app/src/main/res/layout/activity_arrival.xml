@@ -51,6 +51,8 @@
         android:id="@+id/layout_Body"
         android:layout_width="match_parent"
         android:layout_height="280dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -58,6 +60,7 @@
             android:id="@+id/imageBtn_Label"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
+            android:scaleType="fitXY"
             app:srcCompat="@android:drawable/ic_menu_camera" />
     </LinearLayout>
 
